@@ -1,0 +1,253 @@
+$primary-color: #FFEFE7;
+$secondary-color: #FFDAC6;
+$tertiary-color: #BABD8D; 
+$primary-text-color: #7C6A0A;
+$quaternary-color: #FA9500;
+$font-stack: 'IBM Plex Sans', sans-serif;
+$paragraph-size: 1.5;
+$background: #FA9500;
+$text-color: #E86424;
+
+@mixin flexCenter($direction,$content,$align){
+   display: flex; 
+   flex-direction: $direction;
+   justify-content: $content;
+   justify-items: $align;
+}
+@mixin buttonStyle{
+    button{
+        background: none;
+        border-style: none;
+    }
+}
+
+
+body{
+    margin: 0px;
+    padding: 0px;   
+    background-color: white;
+    font-family: $font-stack; 
+}
+nav{
+    width:auto;
+    @include flexCenter(row, space-between, center);
+    color: $primary-text-color;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+    p{
+        font-size: $paragraph-size;
+        padding-left: 30px;
+        text-shadow: 1px 0px #090909;
+    }
+    .icons{
+        display: flex;
+        gap: 15px;
+        @include buttonStyle; // se elije esta variable para que los botenes corazon y carrito de compra se le quite los border
+    }
+}
+article{
+    width: auto;
+    color: $primary-text-color;
+    @include flexCenter(row,space-between, center);
+    padding: 70px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-top: 25px;
+    .impact-section{
+        @include flexCenter(column,space-evenly,flex-start);
+		padding-top:50px;
+		gap: 25px;
+    }
+    h1{
+        
+        font-size: 3em;
+        padding: 0px;
+        margin: 0px;
+    }
+    p{
+        font-size: $paragraph-size;
+    }
+    @include buttonStyle();
+    button{
+        width: 150.12px;
+        padding: 12px;
+        background-color: $quaternary-color;
+        border-radius: 35px;
+        color: white;
+        font-size: 1em;
+        cursor: pointer;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        &:hover{
+			transform: scale(1.1);
+		}
+
+    }
+        img{
+            margin-top: 2px;
+            width: 25vw;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 8px 0 rgba(0,0,0,0.19);
+        }
+}
+section{
+    width: auto;
+    height: auto;
+    // background-color: #E9D5F1     ;
+    padding: 60px;
+    h2{
+        color: $primary-text-color;
+        font-size: 2em;
+    }
+    .healthcare{
+        padding-bottom: 60px;
+        h2{
+            font-weight: 300;
+            padding-bottom: 60PX;
+        }
+        .card-section{
+            // display: flex;
+            width: auto;
+            height: auto;
+            @include flexCenter(row, space-evenly, center);
+            // justify-content: center;
+            flex-wrap: wrap; //se utiliza para que las 6 cajas de cepillos queden en la parte debajo 
+            // align-items: center;
+            column-gap: 200px;
+            row-gap: 80px;       
+        }
+        .product-card{
+            width: 15vw;
+            height: 45vh;
+            // background-color: $secondary-color;
+            background-color: #E9D5F1;
+            color: $primary-text-color;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 8px 0 rgba(0,0,0,0.19);
+            .icon{
+               width: 100%;
+               display: flex;
+               justify-content: flex-end;
+               padding-bottom: 12px;
+               svg{
+                width: 28px;
+                height: 28p;
+
+               } 
+            }
+            .product-image{
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 12vw;
+                    height: 30vh;
+                    object-fit:  cover;
+                    border-radius: 6px;
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 8px 0 rgba(0,0,0,0.19);                
+                }
+            }
+        }
+    }
+    .furniture{
+        @extend .healthcare; //se utiliza para copiar todo el css y se comparte el estilo
+        // background-color: #E9D5F1;
+        // background-color: white;
+        // padding: 70px;
+        // border-radius: 8px;
+        
+        .product-card{
+            background-color: $tertiary-color;
+            // color: white;
+        }
+    }
+}
+.about-us{
+    padding-bottom: 60px;
+    h2{
+        font-weight: bold;
+        padding-bottom: 60px;
+    }
+    .mission-section{
+        @include flexCenter(row, space-evenly, center);
+        .earth{
+            width: 30vw;
+            display: flex;
+            gap: 40px;
+            color: $text-color;
+        }
+        img{
+            object-fit: contain;
+        }
+        p{
+            text-align: center;
+            font-size: $paragraph-size;
+        }
+    }
+}
+.innovation{
+    @extend .earth;
+}
+.gallery{
+    // margin: 60px;
+    h2{
+        font-weight: bold;
+        padding-bottom: 60px;
+    }
+    .gallery-images{
+        @include flexCenter(row, space-between ,center);
+        img{
+            width: 28vw;
+            height: 30vh;
+            object-fit: cover;
+            // object-position: 5px 35%;
+			border-radius: 8px;
+            box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.2);
+			&:hover{
+				transform: scale(1.1);
+			}
+        }
+    }
+}
+.location{
+	$text-color: #E86424;
+	color: $text-color;
+	h2{
+		padding-bottom: 60px;
+		padding-top: 60px;
+	}
+	.map{
+        @include flexCenter(row, space-between ,center);
+        img{
+            width: 100%;
+            object-fit: cover;
+            // object-position: 5px 35%;
+			border-radius: 8px;
+            box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.2);
+			
+        }
+	}
+	h3,p{
+		font-size: $paragraph-size;
+	}
+}
+footer{
+	background-color: $quaternary-color;
+	width: 100%;
+	height: auto;
+	padding:40px;
+	color:white;
+	.social-media{
+		@include flexCenter(row,center,center);
+		gap:40px;
+		padding-bottom: 40px;
+	}
+}
+
+// @media(max-width: 800px){
+//     .gallery .gallery-images{
+//       flex-direction: column;
+//     }
+// }
