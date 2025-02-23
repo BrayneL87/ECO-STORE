@@ -173,8 +173,9 @@ section{
     .mission-section{
         @include flexCenter(row, space-evenly, center);
         .earth{
-            width: 30vw;
+            width: 15vw;
             display: flex;
+            flex-direction: column-reverse;
             gap: 40px;
             color: $text-color;
         }
@@ -184,6 +185,7 @@ section{
         p{
             text-align: center;
             font-size: $paragraph-size;
+
         }
     }
 }
@@ -235,7 +237,7 @@ section{
 }
 footer{
 	background-color: $quaternary-color;
-	width: 100%;
+	width: auto;
 	height: auto;
 	padding:40px;
 	color:white;
