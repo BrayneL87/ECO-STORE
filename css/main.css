@@ -161,8 +161,9 @@ section .furniture .product-card {
   justify-items: center;
 }
 .about-us .mission-section .earth, .about-us .mission-section .innovation {
-  width: 30vw;
+  width: 15vw;
   display: flex;
+  flex-direction: column-reverse;
   gap: 40px;
   color: #E86424;
 }
@@ -223,7 +224,7 @@ section .furniture .product-card {
 
 footer {
   background-color: #FA9500;
-  width: 100%;
+  width: auto;
   height: auto;
   padding: 40px;
   color: white;
