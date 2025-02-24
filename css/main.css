@@ -99,20 +99,18 @@ section .healthcare h2, section .furniture h2 {
   padding-bottom: 60PX;
 }
 section .healthcare .card-section, section .furniture .card-section {
-  width: auto;
-  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   justify-items: center;
   flex-wrap: wrap;
-  -moz-column-gap: 200px;
-       column-gap: 200px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
   row-gap: 80px;
 }
 section .healthcare .product-card, section .furniture .product-card {
-  width: 15vw;
-  height: 45vh;
+  width: 100%;
+  max-width: 400px;
   background-color: #E9D5F1;
   color: #7C6A0A;
   padding: 20px;
@@ -137,8 +135,8 @@ section .healthcare .product-card .product-image, section .furniture .product-ca
   align-items: center;
 }
 section .healthcare .product-card .product-image img, section .furniture .product-card .product-image img {
-  width: 12vw;
-  height: 30vh;
+  width: 250px;
+  height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 6px;
