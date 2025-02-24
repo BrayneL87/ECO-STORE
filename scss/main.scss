@@ -49,7 +49,9 @@ nav{
 article{
     width: auto;
     color: $primary-text-color;
-    @include flexCenter(row,space-between, center);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 70px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     margin-top: 25px;
@@ -70,6 +72,7 @@ article{
     @include buttonStyle();
     button{
         width: 150.12px;
+        margin: 20px;
         padding: 12px;
         background-color: $quaternary-color;
         border-radius: 35px;
@@ -81,10 +84,11 @@ article{
 			transform: scale(1.1);
 		}
 
-    }
+    }   
         img{
             margin-top: 2px;
-            width: 25vw;
+            width: 100%;
+            max-width: 400px;
             border-radius: 8px;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 8px 0 rgba(0,0,0,0.19);
         }
@@ -253,3 +257,4 @@ footer{
 //       flex-direction: column;
 //     }
 // }
+
