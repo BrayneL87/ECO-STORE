@@ -110,18 +110,20 @@ section{
         }
         .card-section{
             // display: flex;
-            width: auto;
-            height: auto;
+            // width: auto;
+            // height: auto;
             @include flexCenter(row, space-evenly, center);
             // justify-content: center;
             flex-wrap: wrap; //se utiliza para que las 6 cajas de cepillos queden en la parte debajo 
             // align-items: center;
-            column-gap: 200px;
+            column-gap: 10px;
             row-gap: 80px;       
         }
         .product-card{
-            width: 15vw;
-            height: 45vh;
+            width: 100%;
+            max-width: 400px;
+            // width: 15vw;
+            // height: 45vh;
             // background-color: $secondary-color;
             background-color: #E9D5F1;
             color: $primary-text-color;
@@ -146,8 +148,8 @@ section{
                 justify-content: center;
                 align-items: center;
                 img{
-                    width: 12vw;
-                    height: 30vh;
+                    width: 250px;
+                    height: 300px;
                     object-fit:  cover;
                     border-radius: 6px;
                     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 8px 0 rgba(0,0,0,0.19);                
